@@ -1,0 +1,27 @@
+<!-- tables.ejs -->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tables</title>
+</head>
+<body>
+  <h1>Tables</h1>
+
+  <% if (tables.length > 0) { %>
+    <ul>
+      <% tables.forEach(table => { %>
+        <li><a href="/questions/<%= table %>"><%= table %></a></li>
+      <% }); %>
+    </ul>
+  <% } else { %>
+    <p>No tables found.</p>
+  <% } %>
+
+  <h2>Create a New Table</h2>
+  <form action="/create-table" method="post">
+    <label for="tableName">Table Name:</label>
+    <input type="text" name="tableName" id="tableName" required>
+    <button type="submit">Create Table</button>
+  </form>
+</body>
+</html>

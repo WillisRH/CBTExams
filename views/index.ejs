@@ -1,0 +1,38 @@
+<!-- index.ejs -->
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>CBT Exams</title>
+</head>
+<body>
+  <h1>Create Question</h1>
+  <form action="/save_questions/<%= table %>/<%= id %>" method="POST">
+    <label for="question">Question #<%=id %>:</label>
+    <input type="text" name="question" required>
+    <br>
+    <label for="option_a">Option A:</label>
+    <input type="text" name="option_a" required>
+    <br>
+    <label for="option_b">Option B:</label>
+    <input type="text" name="option_b" required>
+    <br>
+    <label for="option_c">Option C:</label>
+    <input type="text" name="option_c" required>
+    <br>
+    <label for="option_d">Option D:</label>
+    <input type="text" name="option_d" required>
+    <br>
+    <label for="answer">Answer:</label>
+    <select name="answer" required>
+      <option value="A">A</option>
+      <option value="B">B</option>
+      <option value="C">C</option>
+      <option value="D">D</option>
+    </select>
+    <br>
+    <button type="submit" name="action" value="next">Next</button>
+  </form>
+
+</body>
+</html>

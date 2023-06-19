@@ -1,0 +1,30 @@
+<!-- questions.ejs -->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Mapel <%= table.toString().toUpperCase() %></title>
+</head>
+<body>
+  <h1>Questions</h1>
+  <% if (questions.length === 0) { %>
+    <p>No questions found.</p>
+    <a href="/createquestion/<%= table %>">Create a question</a>
+  <% } else { %>
+    <ul>
+      <% questions.forEach((question) => { %>
+        <li>
+          <p>Question <%= question.id %>: <%= question.question %></p>
+          <ul>
+            <li>Option A: <%= question.option_a %></li>
+            <li>Option B: <%= question.option_b %></li>
+            <li>Option C: <%= question.option_c %></li>
+            <li>Option D: <%= question.option_d %></li>
+          </ul>
+          <p>Answer: <%= question.answer %></p>
+        </li>
+      <% }); %>
+    </ul>
+    <a href="/createquestion/<%= table %>">Create a question</a>
+  <% } %>
+</body>
+</html>
